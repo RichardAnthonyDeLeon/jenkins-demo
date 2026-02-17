@@ -6,19 +6,19 @@ pipeline {
   }
 
   stages {
-    stage('Checkout') {
+    stage('Checkout') { //descarga el código del repositorio
       steps {
         checkout scm
       }
     }
 
-    stage('Install') {
+    stage('Install') { // instala las dependencias del proyecto
       steps {
         sh 'npm ci'
       }
     }
 
-    stage('Test') {
+    stage('Test') { // ejecuta los tests definidos en el proyecto
       steps {
         sh 'npm test'
       }
